@@ -1,0 +1,13 @@
+﻿.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.py[cod]
+build/
+dist/
+*.spec
+!StudyBuddyAI.spec
+*.db
