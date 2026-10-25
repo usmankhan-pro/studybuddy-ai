@@ -1,18 +1,16 @@
-<<<<<<< HEAD
-# studybuddy-ai
-A floating Windows desktop AI study and troubleshooting assistant built with Python, PySide6, and the Google Gemini API. Features a draggable robot mascot, modern Gemini-style dark UI, screenshot/clipboard context sharing, and safe allowlisted diagnostic tools.
-=======
 # StudyBuddy AI
 
-A floating Windows desktop learning assistant built with Python, PySide6, and the Google Gemini API. The resizable chat panel includes a charcoal dark theme, left/right docking, screenshot and clipboard attachments, and optional allowlisted tools.
+A floating Windows desktop study and troubleshooting assistant built with Python, PySide6, and the Google Gemini API.
+
+StudyBuddy AI provides a resizable chat panel alongside your work, with a floating mascot, optional screenshot and clipboard context, and user-approved local tools.
 
 ## Features
 
 - Floating mascot, system tray controls, and configurable Windows shortcut.
-- Resizable chat panel with left/right screen docking.
-- Gemini-powered chat with Markdown formatting and saved local conversation history.
-- Screenshot and clipboard attachments, staged for review before sending.
-- Optional allowlisted local tools, with confirmation required for actions that open files or applications.
+- Resizable chat panel with left/right screen docking and a charcoal dark theme.
+- Gemini-powered chat with Markdown formatting and local SQLite conversation history.
+- Screenshot and clipboard attachments staged for review before sending.
+- Optional allowlisted local tools, with confirmation required before opening files or applications.
 
 ## Requirements
 
@@ -22,7 +20,7 @@ A floating Windows desktop learning assistant built with Python, PySide6, and th
 
 ## Setup
 
-In PowerShell, from the project folder:
+Open PowerShell in the project folder and run:
 
 ```powershell
 python -m venv .venv
@@ -31,14 +29,16 @@ python -m pip install -r requirements.txt
 Copy-Item .env.example .env
 ```
 
-Edit `.env` and replace the placeholder with your API key. Keep `.env` private; it is excluded by `.gitignore`. Do not paste your key into Python source, README files, screenshots, or public issue reports.
+Edit `.env` and replace the placeholder with your API key:
 
 ```ini
 GEMINI_API_KEY=your_api_key_here
 GEMINI_MODEL=gemini-3.5-flash
 ```
 
-Run the application:
+Keep `.env` private. It is excluded by `.gitignore`; never put your API key in Python source, the README, screenshots, or public issue reports.
+
+Launch the app:
 
 ```powershell
 python main.py
@@ -51,9 +51,8 @@ python generate_icon.py
 pyinstaller --clean StudyBuddyAI.spec
 ```
 
-The generated executable expects its environment configuration beside it. Configure the key locally in the output folder when needed; never commit or upload that `.env` file or a build containing embedded credentials.
+Configure your API key locally for the packaged app when needed. Never commit or upload a `.env` file or a build containing embedded credentials.
 
-## GitHub safety
+## Publishing safely
 
-Before publishing, run `git status --short` and confirm that `.env`, virtual environments, databases, and build output are not staged. The `.env.example` file contains placeholders only and documents the required settings.
->>>>>>> e24354e (Initial commit: StudyBuddy AI desktop assistant)
+Before pushing changes, check `git status --short` and confirm `.env`, virtual environments, local databases, and build output are not staged. `.env.example` should contain placeholders only.
